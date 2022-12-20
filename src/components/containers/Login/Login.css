@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background: #f1f1f1;
+}
+.img{
+    max-width: "20%";
+    height: auto;
+}

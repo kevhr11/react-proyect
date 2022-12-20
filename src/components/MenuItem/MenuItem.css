@@ -1,0 +1,33 @@
+.menu-item {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: white;
+  border: 1px solid hsl(0, 0%, 90%);
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  margin: 1rem;
+  height: 120px;
+  transition: 0.1s ease transform;
+  width: 120px;
+}
+
+.menu-item:active {
+  background-color: hsl(0, 0%, 90%);
+  transform: scale(0.95);
+}
+
+.menu-item label,
+.menu-item span {
+  display: inline-block;
+  margin: 0.5rem 0;
+  width: 100%;
+}
+
+.menu-item span {
+  font-size: 2rem;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
