@@ -64,6 +64,10 @@ export default function Users() {
         navegate('/login')
       }
       
+      if (dataUsers.status === 202){
+        navegate('/login')
+      }
+      
     }) 
 
     console.log(
