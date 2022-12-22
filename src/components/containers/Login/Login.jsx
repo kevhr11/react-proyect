@@ -1,13 +1,52 @@
 
-
+import axios from 'axios';
 import React from 'react'
+import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 import './Login.css';
 
 export default function Login() {
+
+  const navegate = useNavigate();
+  const [profile, setProfile ] = useState([]);
+  const [login, setLogin] = useState([]);
+  
+  const [email, setEmail] = useState([]);
+  const [password, setPassword ] = useState([]);
+
+  const getLogin = async (e)=> {
+    e.preventDefault()
+    
+    console.log('Hola')
+      axios.post('http://127.0.0.1:8000/api/login', {
+        "email": email,
+        "password": password,
+    }).then( response => {
+      if(response.status === 200){
+        localStorage.setItem('token', response.data.token);
+        
+        console.log(response.data)
+        navegate('/bussinesprofilehome')
+      } else{
+
+        console.log(response)
+      } 
+      console.log(response)
+      setLogin(response.data)
+    
+    })
+  }
+    
+  const postLogin = async (e) =>{
+      e.preventDefault();
+      
+      axios.post('http://127.0.0.1:8000/api/userProfile')
+    }
+
   return (
   
-    <div className="items-center justify-center mt-32 pt-36">
+    <div className="items-center justify-center mt-22 pt-36">
       <div className="flex justify-center ">
         <img
           className="item-center"
@@ -30,12 +69,13 @@ export default function Login() {
                                 Sign in to your account
                               </h2>
                                 <label htmlFor="" className="sr-only">
-                                          Ingrea tu nombre
+                                          Ingresa su email
                                 </label>
                                 <input
+                                 onChange={(e)=>setEmail(e.target.value)}
                                     id="name"
                                     name="nombre"
-                                    type="string"
+                                    type="email"
                                     autoComplete="name"
                                     required=""
                                     className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
@@ -47,6 +87,7 @@ export default function Login() {
                                 Password
                             </label>
                               <input
+                              onChange={(e)=>setPassword(e.target.value)}
                                 id="password"
                                 name="password"
                                 type="password"
@@ -75,7 +116,7 @@ export default function Login() {
                       </div>
                       <div>
                         <button
-                        onClick
+                        onClick={getLogin}
                           type="submit"
                           className="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                               >
@@ -98,8 +139,9 @@ export default function Login() {
                           Sign in
                         </button>
                         <button
+                         
                           type="submit"
-                          href="http://localhost:3000/touristprofile"
+                          href=""
                           className="group mt-4 relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                               >
                           <span className="absolute inset-y-0 left-0 flex items-center pl-3">

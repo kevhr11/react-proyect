@@ -1,18 +1,36 @@
 import './BussinesProfileHome.css';
 import React from 'react';
 import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, createContext } from 'react';
+
+
+const AuthContext = createContext();
 
 const BussinesProfileHome = () => {
-const [bussinesProfile, setBussinesProfile]=useState([]);
-const getBussinesProfile = async()=> { 
-   axios.get('http://127.0.0.1:8000/api/bussinesProfile').then(
-    dataBussinesProfile=>{setBussinesProfile(dataBussinesProfile.data)}
-    )
-  };
-  // console.log(bussinesProfile[0].location);
+
+    const [user, setUser]=useState('');
+
+    const [token, setToken]=useState(localStorage.getItem('token'));
+    
+    const getToken = async()=> { 
+      setToken(
+        localStorage.getItem('token')
+      ) 
+    }
+  
+    const getUser = async() =>{
+      await axios.get('http://127.0.0.1:8000/api/userProfile',{
+        Headers: { 'Authorization': `Bearer ${token}`}
+        })
+        .then(response => {
+          console.log("")
+          if (response.status === 200){
+            setUser(response.data);
+          }
+        })
+    }
   useEffect(()=>{
-    getBussinesProfile()
+    
     
   },[]);
 

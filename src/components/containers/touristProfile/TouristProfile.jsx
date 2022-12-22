@@ -4,7 +4,7 @@ import React from 'react'
 import Mesaje from './Mesaje';
 
 
-export default function BussinesProfile() {
+export default function TouristProfile() {
   return (
     <div>
        <>
