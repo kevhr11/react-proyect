@@ -3,8 +3,8 @@ import './TouristProfile.css'
 import React from 'react'
 import Mesaje from './Mesaje';
 
-
-export default function BussinesProfile() {
+export default function TourisProfile() {
+  
   return (
     <div>
        <>

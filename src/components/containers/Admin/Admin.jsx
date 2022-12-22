@@ -75,7 +75,7 @@ export default function Admin() {
             </h1>
             <div className="bg-white rounded-md list-none  text-center ">
               <li className="py-3 border-b-2">
-                <a href="http://localhost:3001/cruddepartament" className="list-none  hover:text-indigo-600">
+                <a href="http://localhost:3000/cruddepartament" className="list-none  hover:text-indigo-600">
                   Departamentos
                 </a>
               </li>
@@ -91,7 +91,7 @@ export default function Admin() {
               </li>
               <li className="py-3 border-b-2">
                 <a href="#" className="list-none  hover:text-indigo-600">
-                  Genders
+                  Touris profile
                 </a>
               </li>
               <li className="py-3 ">
@@ -100,6 +100,22 @@ export default function Admin() {
                   className="list-none border-b-2 hover:text-indigo-600"
                 >
                   Bussines type
+                </a>
+              </li>
+              <li className="py-3 ">
+                <a
+                  href="#"
+                  className="list-none border-b-2 hover:text-indigo-600"
+                >
+                  Turist Places
+                </a>
+              </li>
+              <li className="py-3 ">
+                <a
+                  href="#"
+                  className="list-none border-b-2 hover:text-indigo-600"
+                >
+                  Tourist Category
                 </a>
               </li>
             </div>
