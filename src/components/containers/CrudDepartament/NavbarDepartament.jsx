@@ -22,11 +22,7 @@ export default function NavbarDepartament() {
       <img
         src="https://github.com/kevhr11/project-laravel/raw/main/resources/img/logo.png"
         className="h-6 mr-3 sm:h-9"
-        alt="Flowbite Logo"
       />
-      <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-        Flowbite
-      </span>
     </a>
     <div className="flex md:order-2">
       <button

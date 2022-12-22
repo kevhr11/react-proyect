@@ -7,7 +7,7 @@ export default function Navbar() {
     
     const navegate = useNavigate();
     const ruta = () => {
-        navegate('/insertdepartament')
+        navegate('/insertmunicipalities')
     }
     const rutaInicio = () => {
         navegate('/admin')
@@ -28,15 +28,13 @@ export default function Navbar() {
     </a>
     <div className="flex md:order-2">
       <button
-      
       onClick={ruta}
         type="button"
         className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
       >
-      
-       
-        New departament
+        New Municipaliti
       </button>
+      
       <button
       
       onClick={rutaInicio}

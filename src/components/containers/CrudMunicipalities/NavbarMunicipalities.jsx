@@ -2,17 +2,15 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 import Login from '../Login/Login';
+import Municipalities from './InsertMunicipalities';
 
-export default function Navbar() {
+export default function NavbarMunicipalities() {
     
     const navegate = useNavigate();
     const ruta = () => {
-        navegate('/insertdepartament')
+        navegate('/crudmunicipalities')
     }
-    const rutaInicio = () => {
-        navegate('/admin')
-    }
-
+    
   return (
     
    
@@ -33,18 +31,10 @@ export default function Navbar() {
         type="button"
         className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
       >
-      
        
-        New departament
+        Municipalities
       </button>
-      <button
-      
-      onClick={rutaInicio}
-        type="button"
-        className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-      >
-        Home
-      </button>
+
    
     </div>
     <div

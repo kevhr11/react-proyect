@@ -9,6 +9,9 @@ import Admin from './components/containers/Admin/Admin';
 import './Main.css';
 import CrudDepartament from './components/containers/CrudDepartament/CrudDepartament';
 import InsertDepartament from './components/containers/CrudDepartament/InsertDepartament';
+import CrudMunicipalities from './components/containers/CrudMunicipalities/CrudMunicipalities';
+import InsertMunicipalities from './components/containers/CrudMunicipalities/InsertMunicipalities';
+
 
 function App() {
 
@@ -22,7 +25,9 @@ function App() {
         <Route path="/bussinesprofile" element={<BussinesProfile />}> </Route>
         <Route path="/touristprofile" element={<TouristProfile />}> </Route>
         <Route path="/cruddepartament" element={<CrudDepartament />}> </Route>
+        <Route path="/crudmunicipalities" element={<CrudMunicipalities />}> </Route>
         <Route path="/insertdepartament" element={<InsertDepartament />}> </Route>
+        <Route path="/insertmunicipalities" element={<InsertMunicipalities />}> </Route>
         <Route path="/admin" element={<Admin />}> </Route>
       </Routes>
     </BrowserRouter>

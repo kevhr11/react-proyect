@@ -1,5 +1,6 @@
 import React from 'react'
 import CrudDepartament from '../CrudDepartament/CrudDepartament'
+import CrudMunicipalities from '../CrudMunicipalities/CrudMunicipalities'
 
 export default function Admin() {
   return (
@@ -11,7 +12,11 @@ export default function Admin() {
       <div className="flex justify-between items-center py-6 px-10 container mx-auto">
         <div>
           <h1 className="text-2xl font-bold bg-gradient-to-tr from-indigo-600 to-green-600 bg-clip-text text-transparent hover:cursor-pointer">
-            Indigo
+          <img
+        src="https://github.com/kevhr11/project-laravel/raw/main/resources/img/logo.png"
+        className="h-6 mr-3 sm:h-9"
+        alt="Flowbite Logo"
+      />
           </h1>
         </div>
         <div>
@@ -75,12 +80,12 @@ export default function Admin() {
             </h1>
             <div className="bg-white rounded-md list-none  text-center ">
               <li className="py-3 border-b-2">
-                <a href="http://localhost:3001/cruddepartament" className="list-none  hover:text-indigo-600">
+                <a href="http://localhost:3000/cruddepartament" className="list-none  hover:text-indigo-600">
                   Departamentos
                 </a>
               </li>
               <li className="py-3 border-b-2">
-                <a href="#" className="list-none  hover:text-indigo-600">
+                <a href="http://127.0.0.1:3000/crudmunicipalities" className="list-none  hover:text-indigo-600">
                   Municipios
                 </a>
               </li>
