@@ -21,35 +21,19 @@ export default function Login() {
   const [usuario, setUsuario] = useState(null);
   const [cargandoUsuario, setCargandoUsuario] = useState(true);
 
-  
-
-
   const getLogin = async (e) => {
-    const getUser = async function signup() {
-      const { data } = await Axios.post('127.0.0.1:8000/api/userProfile', {
-        usuario
-      });
-      console.log(usuario)
-      setUsuario(data.usuario);
-      setToken(data.token);
-    }
-
     e.preventDefault()
-
     axios.post('http://127.0.0.1:8000/api/login', {
       "email": email,
       "password": password,
     }).then(response => {
       console.log('Hola')
       console.log(usuario)
-      
       if (response.status === 200) {
-        localStorage.setItem('token', response.data.token);
-        
 
+        localStorage.setItem('token', response.data.token);
         navegate('/bussinesprofilehome')
       } else {
-
         console.log(response)
       }
       console.log(response)
@@ -59,10 +43,19 @@ export default function Login() {
   }
 
   const postLogin = async (e) => {
-    e.preventDefault();
 
     axios.post('http://127.0.0.1:8000/api/userProfile')
+    async function signup(email, password) {
+      const { data } = await Axios.post('127.0.0.1:8000/api/userProfile', {
+        usuario
+      });
+      setUsuario(data.usuario);
+      setToken(data.token);
+    }
+    console.log(usuario)
   }
+
+
 
   return (
 

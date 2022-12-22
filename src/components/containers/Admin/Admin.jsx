@@ -37,7 +37,7 @@ export default function Admin() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="http://localhost:3000/login"
                   className="text-gray-700 hover:text-indigo-600 text-md "
                 >
                   Contact
