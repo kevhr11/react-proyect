@@ -19,6 +19,8 @@ import CrudSelectProfile from './components/containers/CrudSelectProfile/CrudSel
 import InsertSelectProfile from './components/containers/CrudSelectProfile/InsertSelectProfile';
 import CrudTouristPlaceType from './components/containers/CrudTouristPlaceType/CrudTouristPlaceType';
 import InsertTouristPlaceType from './components/containers/CrudTouristPlaceType/InsertTouristPlaceType';
+import CrudServices from './components/containers/CrudServices/CrudServices';
+import InsertServices from './components/containers/CrudServices/InsertServices';
 
 
 function App() {
@@ -44,6 +46,8 @@ function App() {
         <Route path="/insertselectprofile" element={<InsertSelectProfile/>}> </Route>
         <Route path="/crudtouristplacetype" element={<CrudTouristPlaceType/>}> </Route>
         <Route path="/inserttouristplacetype" element={<InsertTouristPlaceType/>}> </Route>
+        <Route path="/crudservices" element={<CrudServices/>}> </Route>
+        <Route path="/insertservices" element={<InsertServices/>}> </Route>
         <Route path="/admin" element={<Admin />}> </Route>
       </Routes>
     </BrowserRouter>

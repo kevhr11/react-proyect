@@ -98,8 +98,8 @@ export default function Admin() {
                 </a>
               </li>
               <li className="py-3 border-b-2">
-                <a href="#" className="list-none  hover:text-indigo-600">
-                  Users
+                <a href="http://127.0.0.1:3000/crudservices" className="list-none  hover:text-indigo-600">
+                  Services
                 </a>
               </li>
               <li className="py-3 border-b-2">
