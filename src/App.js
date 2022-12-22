@@ -7,6 +7,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 import './Main.css';
+import Destinations from './components/containers/destinations/Destinations';
+import Navbar from './components/containers/navbar/Navbar';
+
+
 function App() {
 
   return (
@@ -16,6 +20,11 @@ function App() {
         <Route path="/login" element={<Login />}> </Route>
         <Route path="/bussinesprofile" element={<BussinesProfile />}> </Route>
         <Route path="/touristprofile" element={<TouristProfile />}> </Route>
+        <Route path="/destinations" element={<Destinations />}> </Route>
+        <Route path="/navbar" element={<Navbar />}> </Route>
+        <Route path="/destinations" element={<Destinations />}> </Route>
+        <Route path="/destinations" element={<Destinations />}> </Route>
+        
       </Routes>
     </BrowserRouter>
      
