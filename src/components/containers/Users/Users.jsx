@@ -43,7 +43,7 @@ export default function Users() {
    const postUsers = async (e) => {
     e.preventDefault();
 
-    axios.post('http://127.0.0.1:8000/api/users/',{
+    axios.post('http://127.0.0.1:8000/api/register',{
     "name": name,
     "lastName": lastName,
     "DUI":DUI ,
@@ -59,7 +59,10 @@ export default function Users() {
     }).then(dataUsers => {
       console.log(dataUsers)
       setUsers(dataUsers.data);
-      
+      if (dataUsers.status === 200){
+        navegate('/bussinesprofilehome')
+      }
+       
       if (dataUsers.status === 201){
         navegate('/login')
       }
