@@ -32,9 +32,6 @@ const BussinesProfileHome = () => {
           console.log(response.data);
           setUser(response.data.userData);
         })
-        .catch((error) => {
-          console.log(error);
-        });
   }
   
   useEffect(()=>{
