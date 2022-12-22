@@ -1,6 +1,4 @@
 import React from 'react'
-import CrudDepartament from '../CrudDepartament/CrudDepartament'
-import CrudMunicipalities from '../CrudMunicipalities/CrudMunicipalities'
 
 export default function Admin() {
   return (
@@ -76,7 +74,7 @@ export default function Admin() {
 
           <div className="bg-white  rounded-md">
             <h1 className="text-center text-xl my-4  bg-white py-2 rounded-md border-b-2 cursor-pointer  text-gray-600">
-              Servicios
+              <b>Servicios</b>
             </h1>
             <div className="bg-white rounded-md list-none  text-center ">
               <li className="py-3 border-b-2">
@@ -90,21 +88,35 @@ export default function Admin() {
                 </a>
               </li>
               <li className="py-3 border-b-2">
+                <a href="http://127.0.0.1:3000/crudselectprofile" className="list-none  hover:text-indigo-600">
+                  Select Profile
+                </a>
+              </li>
+              <li className="py-3 border-b-2">
+                <a href="http://127.0.0.1:3000/crudtouristplacetype" className="list-none  hover:text-indigo-600">
+                  Tourist Place Type
+                </a>
+              </li>
+              <li className="py-3 border-b-2">
                 <a href="#" className="list-none  hover:text-indigo-600">
                   Users
                 </a>
               </li>
               <li className="py-3 border-b-2">
-                <a href="#" className="list-none  hover:text-indigo-600">
-                  Genders
+                <a
+                  href="http://127.0.0.1:3000/crudbussinestype"
+                  className="list-none hover:text-indigo-600"
+                >
+                  Bussines Type
                 </a>
               </li>
-              <li className="py-3 ">
+
+              <li className="py-3 border-b-2">
                 <a
-                  href="#"
-                  className="list-none border-b-2 hover:text-indigo-600"
+                  href="http://127.0.0.1:3000/crudcategory"
+                  className="list-none hover:text-indigo-600"
                 >
-                  Bussines type
+                  Category
                 </a>
               </li>
             </div>
