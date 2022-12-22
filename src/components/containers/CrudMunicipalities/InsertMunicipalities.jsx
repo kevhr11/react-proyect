@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios';
-
 import { useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
 import NavbarMunicipalities from './NavbarMunicipalities';
@@ -15,16 +14,19 @@ export default function Municipaliti() {
    const [municipaliti, setMunicipalities ] = useState([]);
    
    const [name, setName ] = useState([]);
-  
-   
- 
-   
+
+   const [departament, setDepartaments] = useState([]);
+
+   const [users, setUsers] = useState([]);
+
+   const [departamentSelect, setDepartamentsSelect] = useState([]);
  
    const postMunicipaliti = async (e) => {
     e.preventDefault();
 
     axios.post('http://127.0.0.1:8000/api/municipalities/',{
     "name": name,
+    "idDepartaments": departamentSelect
 
 
     }).then(dataMunicipalities => {
@@ -43,11 +45,7 @@ export default function Municipaliti() {
     console.log(
       name
       )
-   } 
-
-   const [departament, setDepartaments ] = useState([]);
-   const [users, setUsers] = useState([]);
-   
+   }  
    const getData = async () => {
     axios.get('http://127.0.0.1:8000/api/departaments').then(data => {
       setDepartaments(data.data);
@@ -158,7 +156,7 @@ export default function Municipaliti() {
                     Select Departament
                   </label>
                   <select
-                    onChange={(e)=>setDepartaments(e.target.value)}
+                    onChange={(e)=>setDepartamentsSelect(e.target.value)}
                     id="country"
                     name="country"
                     autoComplete="country-name"
