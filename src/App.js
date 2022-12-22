@@ -12,6 +12,7 @@ import InsertDepartament from './components/containers/CrudDepartament/InsertDep
 import CrudMunicipalities from './components/containers/CrudMunicipalities/CrudMunicipalities';
 import InsertMunicipalities from './components/containers/CrudMunicipalities/InsertMunicipalities';
 import Key from './components/containers/KeyView/Key';
+import KeyGenery from './components/containers/KeyView/KeyGenery';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         <Route path="/insertmunicipalities" element={<InsertMunicipalities />}> </Route>
         <Route path="/admin" element={<Admin />}> </Route>
         <Route path="/loger" element={<Key />}> </Route>
+        <Route path="/logerup" element={<KeyGenery />}> </Route>
       </Routes>
     </BrowserRouter>
     );
