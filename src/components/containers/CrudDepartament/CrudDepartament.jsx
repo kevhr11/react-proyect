@@ -6,7 +6,6 @@ import Navbar from './Navbar';
 
 
 export default function CrudDepartament() {
-  
   const [departament, setDepartaments ] = useState([]);
   const getData = async () => {
     axios.get('http://127.0.0.1:8000/api/departaments').then(data => {
