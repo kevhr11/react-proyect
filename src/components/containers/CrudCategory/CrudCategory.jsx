@@ -1,16 +1,16 @@
-import './CrudDepartamente.css';
+import './CrudCategory.css';
 import React from 'react'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Navbar from './Navbar';
 
 
-export default function CrudDepartament() {
+export default function CrudCategory() {
   
-  const [departament, setDepartaments ] = useState([]);
+  const [category, setCategorys ] = useState([]);
   const getData = async () => {
-    axios.get('http://127.0.0.1:8000/api/departaments').then(data => {
-      setDepartaments(data.data);
+    axios.get('http://127.0.0.1:8000/api/category').then(data => {
+      setCategorys(data.data);
     })
    } 
 
@@ -19,7 +19,7 @@ export default function CrudDepartament() {
     getData()
    
 }, []);
-console.log(departament)
+console.log(category)
   return (
     <div>
     <Navbar/>
@@ -54,7 +54,7 @@ console.log(departament)
                 </th>
               </tr>
             </thead>
-              {departament.map(item=>{
+              {category.map(item=>{
                     return (
             <tbody key={item.id} value={item.id} className="min-w-full">
               <tr className="bg-white min-w-full border-b transition duration-300 ease-in-out hover:bg-gray-100">

@@ -1,25 +1,24 @@
-import './CrudDepartamente.css';
+import './CrudServices.css';
 import React from 'react'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Navbar from './Navbar';
 
 
-export default function CrudDepartament() {
+export default function CrudServices() {
   
-  const [departament, setDepartaments ] = useState([]);
+  const [service, setServices] = useState([]);
   const getData = async () => {
-    axios.get('http://127.0.0.1:8000/api/departaments').then(data => {
-      setDepartaments(data.data);
+    axios.get('http://127.0.0.1:8000/api/service').then(data => {
+      setServices(data.data);
     })
    } 
-
    
    useEffect(() => {
     getData()
    
 }, []);
-console.log(departament)
+console.log(service)
   return (
     <div>
     <Navbar/>
@@ -44,7 +43,37 @@ console.log(departament)
                   scope="col"
                   className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                 >
+                  Id Category
+                </th>
+                <th
+                  scope="col"
+                  className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                >
                   Name
+                </th>
+                <th
+                  scope="col"
+                  className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                >
+                  Description
+                </th>
+                <th
+                  scope="col"
+                  className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                >
+                  Price
+                </th>
+                <th
+                  scope="col"
+                  className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                >
+                  IMG
+                </th>
+                <th
+                  scope="col"
+                  className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                >
+                  Id Bussines Profile
                 </th>
                 <th
                   scope="col"
@@ -54,7 +83,7 @@ console.log(departament)
                 </th>
               </tr>
             </thead>
-              {departament.map(item=>{
+              {service.map(item=>{
                     return (
             <tbody key={item.id} value={item.id} className="min-w-full">
               <tr className="bg-white min-w-full border-b transition duration-300 ease-in-out hover:bg-gray-100">
@@ -63,7 +92,22 @@ console.log(departament)
                 {item.id}
                 </td>
                 <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                {item.idCategory}
+                </td>
+                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                 {item.name}
+                </td>
+                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                {item.description}
+                </td>
+                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                {item.price}
+                </td>
+                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                {item.img}
+                </td>
+                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                {item.idBussinesProfile}
                 </td>
                 <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                  <th><div class="flex space-x-2 justify-center">

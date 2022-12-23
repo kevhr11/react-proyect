@@ -1,16 +1,17 @@
-import './CrudDepartamente.css';
+import './CrudTouristPlaceType.css';
 import React from 'react'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Navbar from './Navbar';
 
 
-export default function CrudDepartament() {
+export default function CrudTouristPlaceType() {
   
-  const [departament, setDepartaments ] = useState([]);
+
+  const [touristplace, setTouristPlaceTypes ] = useState([]);
   const getData = async () => {
-    axios.get('http://127.0.0.1:8000/api/departaments').then(data => {
-      setDepartaments(data.data);
+    axios.get('http://127.0.0.1:8000/api/touristplacetype').then(data => {
+      setTouristPlaceTypes(data.data);
     })
    } 
 
@@ -19,7 +20,7 @@ export default function CrudDepartament() {
     getData()
    
 }, []);
-console.log(departament)
+console.log(touristplace)
   return (
     <div>
     <Navbar/>
@@ -50,11 +51,17 @@ console.log(departament)
                   scope="col"
                   className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                 >
+                  Status
+                </th>
+                <th
+                  scope="col"
+                  className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                >
                   Opciones
                 </th>
               </tr>
             </thead>
-              {departament.map(item=>{
+              {touristplace.map(item=>{
                     return (
             <tbody key={item.id} value={item.id} className="min-w-full">
               <tr className="bg-white min-w-full border-b transition duration-300 ease-in-out hover:bg-gray-100">
@@ -64,6 +71,9 @@ console.log(departament)
                 </td>
                 <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                 {item.name}
+                </td>
+                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                {item.status}
                 </td>
                 <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                  <th><div class="flex space-x-2 justify-center">

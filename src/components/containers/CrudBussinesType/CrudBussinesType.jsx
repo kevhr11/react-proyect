@@ -1,16 +1,16 @@
-import './CrudDepartamente.css';
+import './CrudBussinesType.css';
 import React from 'react'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Navbar from './Navbar';
 
 
-export default function CrudDepartament() {
+export default function CrudBussinesType() {
   
-  const [departament, setDepartaments ] = useState([]);
+  const [BussinesType, setBussinesTypes ] = useState([]);
   const getData = async () => {
-    axios.get('http://127.0.0.1:8000/api/departaments').then(data => {
-      setDepartaments(data.data);
+    axios.get('http://127.0.0.1:8000/api/BussinesType').then(data => {
+      setBussinesTypes(data.data);
     })
    } 
 
@@ -19,7 +19,7 @@ export default function CrudDepartament() {
     getData()
    
 }, []);
-console.log(departament)
+console.log(BussinesType)
   return (
     <div>
     <Navbar/>
@@ -54,7 +54,7 @@ console.log(departament)
                 </th>
               </tr>
             </thead>
-              {departament.map(item=>{
+              {BussinesType.map(item=>{
                     return (
             <tbody key={item.id} value={item.id} className="min-w-full">
               <tr className="bg-white min-w-full border-b transition duration-300 ease-in-out hover:bg-gray-100">
